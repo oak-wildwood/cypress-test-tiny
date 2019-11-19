@@ -1,4 +1,4 @@
-describe("project 1", () => {
+describe("project 2", () => {
   it("test passed", () => {
     cy.log("testing");
   });
