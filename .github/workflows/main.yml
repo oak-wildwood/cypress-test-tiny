@@ -6,7 +6,7 @@ name: Auto back merge to develop
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,14 +17,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - name: Run a one-line script
-      run: git checkout develop
-      
-    - name: Merge latest onto master
-      run: git merge master --no-ff
+      - name: Checkout master
+        run: git checkout master
 
-    - name: Run a multi-line script
-      run: echo Back merge success
+      - name: Check out develop
+        run: git checkout develop
+
+      - name: Merge latest onto master
+        run: git merge master --no-ff
+
+      - name: Run a multi-line script
+        run: echo Back merge success
