@@ -19,12 +19,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        ref: master
 
-      - name: Checkout master
-        run: git checkout master
+      - uses: actions/checkout@v2
+        ref: develop
 
-      - name: Check out develop
-        run: git checkout develop
+      # - name: Checkout master
+      #   run: git checkout master
+
+      # - name: Check out develop
+      #   run: git checkout develop
 
       - name: Merge latest onto master
         run: git merge master --no-ff
