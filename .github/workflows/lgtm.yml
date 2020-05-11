@@ -12,3 +12,5 @@ jobs:
       - uses: micnncim/action-lgtm-reaction@v0.6.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+        trigger: '[".*looks good to me.*", "^lg2m$", "^lgtm$", "^[gG]ood [jJ]ob!?$"]'
