@@ -13,4 +13,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-        trigger: '[".*looks good to me.*", "^lg2m$", "^lgtm$", "^[gG]ood [jJ]ob!?$"]'
+          trigger: '[".*looks good to me.*", "^lg2m$", "^lgtm$", "^[gG]ood [jJ]ob!?$"]'
